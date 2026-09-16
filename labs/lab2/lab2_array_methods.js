@@ -1,0 +1,17 @@
+/**
+ Purpose: for practising array methods
+ forEach((currentElement) => {}),
+ map((currentElement) => {})
+ reduce((currentElement) => {})
+ filter((currentElement) => {})
+ search((currentElement) => {})
+ */
+const courseList = ["COMP3123", "COMP3122", "COMP1152", "MATH100"]
+courseList.forEach((course) => {
+    console.log(course + "!")
+});
+
+const filteredCourses = courseList.filter((currentElement)=>{
+    return currentElement[0] === "C"
+})
+console.log(filteredCourses)

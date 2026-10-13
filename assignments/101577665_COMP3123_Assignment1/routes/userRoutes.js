@@ -16,6 +16,10 @@ router.post('/signup', async (req, res) => {
         await user.save();
         res.status(201).json({ message: 'User created successfully.', user_id: user._id });
     } catch (err) {
+        // Handle duplicate key error (Username or Email already exists) -> 409 Conflict
+        if (err.code === 11000) {
+            return res.status(409).json({ status: false, message: 'Username or email already exists.' });
+        }
         res.status(400).json({ status: false, message: err.message });
     }
 });
@@ -24,6 +28,9 @@ router.post('/signup', async (req, res) => {
 router.post('/login', async (req, res) => {
     try {
         const { username, email, password } = req.body;
+        if (!password || (!username && !email)) {
+            return res.status(400).json({ status: false, message: 'Please provide credentials' });
+        }
         const query = username ? { username } : { email };
         const user = await User.findOne(query);
         if (!user) {

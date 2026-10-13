@@ -56,6 +56,11 @@ app.use((err, req, res, next) => {
     res.status(500).json({ status: false, message: 'Internal Server Error' });
 });
 
+// Root Welcome Route --for Vercel 
+app.get('/', (req, res) => {
+    res.status(200).json({ status: true, message: 'COMP 3123 Assignment 1 API is live!' });
+});
+
 // Start Server
 app.listen(PORT, () => {
     console.log(`Server running on http://localhost:${PORT}`);

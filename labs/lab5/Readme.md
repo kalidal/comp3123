@@ -61,11 +61,16 @@ app.use((err,req,res,next) => {
 **6. Explain the Purpose of `express.Router()` in the Code Above.**
 
 - Why is `express.Router()` used in Express.js applications, and how does it benefit the code structure?
+   - express.Router() creates a separate router that groups related routes together. In this lab, the profile, login and logout routes are placed in routes/users.js instead of putting everything in app.js. This makes the code easier to organize, maintain and expand. It also allows routes to share a common URL prefix
 
 **7. Error Handling in Express.js**
 
 - How would you implement error handling in the Express routes to ensure that any issues (such as file not found or server errors) are appropriately handled? Provide an example.
-
+   - Error-handling middleware catches errors passed to it through next(err). It has four parameters: err, req, res and next. 
+         - app.use((err, req, res, next) => {
+                console.error(err);
+                res.status(500).send('Server Error');
+          });
 ---
 
 #### Section C: Bonus
@@ -73,6 +78,8 @@ app.use((err,req,res,next) => {
 **7. Dynamic Port Binding in Express.js**
 
 - Explain how the `app.listen(process.env.port || 8081)` line works and why it's useful in production environments.
+   - process.env.port reads the port from an environment variable.In this lines, Express uses port 8081 when the variable is missing or evaluates to a false value.
+   - This is useful in production because hosting providers can assign the application a port dynamically. Using an environment variable allows the same application to run in different environments without changing the source code
 
 ---
 # Submission Guideline

@@ -1,0 +1,142 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 20px;
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #ffffff;
+}
+
+.container {
+  max-width: 800px;
+  margin: 20px auto;
+  padding: 20px 30px;
+  border: 2px solid #28a745;
+  background-color: #ffffff;
+}
+
+h1 {
+  text-align: center;
+  color: #212529;
+  font-size: 36px;
+  font-weight: 500;
+  margin-top: 0;
+  margin-bottom: 20px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.form-row {
+  display: flex;
+  gap: 15px;
+}
+
+.form-row .form-group {
+  flex: 1;
+}
+
+.form-row.three-col .form-group {
+  flex: 1;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group label {
+  color: #6c757d;
+  font-size: 14px;
+  margin-bottom: 6px;
+  text-align: center;
+}
+
+.form-group input,
+.form-group select {
+  padding: 8px 12px;
+  border: 1px solid #ced4da;
+  border-radius: 4px;
+  font-size: 14px;
+  color: #495057;
+  width: 100%;
+}
+
+.form-group input::placeholder {
+  color: #adb5bd;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+  outline: none;
+  border-color: #80bdff;
+  box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+}
+
+.checkbox-group {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 10px;
+  color: #212529;
+  font-size: 14px;
+}
+
+.btn-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+button {
+  background-color: #28a745;
+  color: white;
+  border: none;
+  padding: 8px 24px;
+  border-radius: 4px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #218838;
+}
+
+/* Submission Output Area */
+.submitted-details {
+  margin-top: 30px;
+  padding: 20px;
+  border: 2px solid #28a745;
+  color: #000000;
+  text-align: center;
+
+}
+
+.submitted-details p {
+  margin: 8px 0;
+  font-size: 18px;
+  color: #000000;
+  text-align: center;
+
+}
+
+.submitted-details p strong {
+  color: #28a745;
+  text-align: center;
+
+}
+
+.submitted-details h2 {
+  text-align: center;
+  font-size: 28px;
+  font-weight: bold;
+  margin-top: 20px;
+  margin-bottom: 15px;
+  color: #000000;
+}
